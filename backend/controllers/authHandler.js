@@ -71,6 +71,7 @@ async function signupHandler(req, res) {
       .status(201)
       .send({ msg: "Signup successful. OTP sent to email." });
   } catch (err) {
+    console.error(err);
     return res.status(500).send({ msg: "Server error", error: err.message });
   }
 }
