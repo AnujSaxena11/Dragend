@@ -1,3 +1,4 @@
+require("dotenv").config();
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -10,7 +11,6 @@ const {
 } = require("../validations/auth");
 const sendEmail = require("../utils/SendEmail");
 
-require("dotenv").config();
 
 const jwtSec = process.env.JWT_SECRET;
 
@@ -162,7 +162,7 @@ async function forgetPasswordHandler(req, res) {
     if (!isAvailabe) return res.status(404).send({ msg: "User Not Found." });
 
     const resetToken = jwt.sign({ email }, jwtSec, { expiresIn: 120 });
-    const URL = `http://localhost:8080/api/auth/createPassword/${resetToken}`;
+    const URL = `${process.env.FRONTEND_URL}/createPassword/${resetToken}`;
 
     return res.status(200).send({ msg: "Token Generated", URL });
   } catch (err) {
