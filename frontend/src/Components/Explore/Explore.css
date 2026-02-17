@@ -1,0 +1,188 @@
+.explore-root {
+  background: #f3f4f6;
+  min-height: 200vh; /* Added height to ensure scrolling */
+  font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.explore-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7b2d8d, #f0a8dd);
+  color: white;
+  text-align: center;
+}
+
+.explore-hero.released {
+  /* This is the magic fix: allow clicks to pass through to the content below */
+  pointer-events: none; 
+}
+
+.hero-content {
+  pointer-events: auto; /* Re-enable clicks for hero text/buttons if needed */
+}
+
+.hero-content h1 { font-size: 56px; font-weight: 800; margin: 0; }
+.hero-content p { font-size: 18px; margin-top: 10px; opacity: 0.8; }
+
+.scroll-cta {
+  position: absolute;
+  bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* HEADER */
+.explore-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 96px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-left {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.header-left input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+}
+
+.clear-search {
+  background: #f3f4f6;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* MAIN */
+.explore-main {
+  margin-top: 100vh; /* Start below the initial hero height */
+  padding: 40px 96px;
+  position: relative;
+  z-index: 50;
+}
+
+.filters-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.filter {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter select {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: #6366f1;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* PROJECT LIST */
+.project-list {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.project-row:last-child { border-bottom: none; }
+
+.project-main h3 { margin: 0; font-size: 18px; }
+.project-main p { color: #6b7280; font-size: 14px; margin: 8px 0; }
+
+.meta { display: flex; gap: 8px; }
+.meta span {
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-side { text-align: right; display: flex; flex-direction: column; gap: 8px; }
+.price { font-weight: 700; font-size: 16px; }
+.rating { display: flex; align-items: center; gap: 4px; justify-content: flex-end; font-size: 14px; }
+
+.project-side button {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.empty-state {
+  padding: 60px;
+  text-align: center;
+  color: #6b7280;
+}
