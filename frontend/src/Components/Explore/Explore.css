@@ -1,0 +1,325 @@
+/* ===============================
+   ROOT
+================================ */
+.explore-root {
+  background: #f9fafb;
+  min-height: 100vh;
+  color: #0f0f0f;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ===============================
+   HERO (MARKETING → TOOLING)
+================================ */
+.explore-hero {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  height: 70vh;
+  padding: 72px 96px 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  background:
+    radial-gradient(1200px 500px at 80% 30%, rgba(153, 97, 204, 0.12), transparent),
+    linear-gradient(180deg, #dba0e7, #f0a8dd);
+
+  color: white;
+  transition:
+    height 0.45s cubic-bezier(.4,0,.2,1),
+    padding 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+.explore-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #fbf9faf2);
+  pointer-events: none;
+}
+
+/* COMPRESSED HERO (NOT REMOVED) */
+.explore-hero.collapsed {
+  height: 96px;
+  padding: 20px 96px;
+}
+
+/* ===============================
+   HERO CONTENT
+================================ */
+.hero-content {
+  max-width: 860px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: clamp(44px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  transition: font-size 0.4s ease;
+}
+
+.explore-hero.collapsed .hero-content h1 {
+  font-size: 22px;
+}
+
+.hero-content p {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cfd1d6;
+  max-width: 620px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.explore-hero.collapsed .hero-content p {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+/* ===============================
+   HEADER (REUSES HERO SPACE)
+================================ */
+.explore-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  height: 64px;
+  padding: 0 96px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(249,250,251,0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e5e7eb;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.explore-header.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+/* ===============================
+   HEADER SEARCH
+================================ */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  width: 420px;
+}
+
+.header-left input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* ===============================
+   HEADER LOGO
+================================ */
+.header-right img {
+  height: 26px;
+  opacity: 0.85;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+.explore-main {
+  padding: 48px 96px 96px;
+}
+
+/* ===============================
+   FILTER BAR (INTEGRATED)
+================================ */
+.filters-bar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.filter select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===============================
+   PROJECT LIST
+================================ */
+.project-list {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* ===============================
+   PROJECT ROW (CONFIDENT)
+================================ */
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding: 22px 28px;
+  border-bottom: 1px solid #e5e7eb;
+
+  transition: background 0.2s ease, border-left 0.2s ease;
+}
+
+.project-row:last-child {
+  border-bottom: none;
+}
+
+.project-row:hover {
+  background: #fafafa;
+  border-left: 4px solid #111;
+}
+
+/* LEFT */
+.project-main h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.project-main p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 540px;
+}
+
+.meta {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.meta span {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  color: #374151;
+}
+
+/* RIGHT */
+.project-side {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.project-side button {
+  padding: 8px 16px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.project-side button:hover {
+  background: #000;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .explore-hero,
+  .explore-hero.collapsed {
+    padding: 48px;
+  }
+
+  .explore-header,
+  .explore-main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-hero {
+    height: 48vh;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+
+  .filters-bar {
+    flex-direction: column;
+  }
+
+  .project-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .project-side {
+    justify-content: space-between;
+  }
+}
